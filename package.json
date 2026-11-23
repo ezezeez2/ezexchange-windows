@@ -7,7 +7,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "start": "electron .",
-    "dist": "electron-builder --win nsis"
+    "dist": "electron-builder --win nsis --publish never"
   },
   "devDependencies": {
     "electron": "^35.0.0",
@@ -20,18 +20,9 @@
       "output": "dist",
       "buildResources": "assets"
     },
-    "files": [
-      "main.js",
-      "package.json",
-      "assets/icon.png"
-    ],
+    "files": ["main.js", "package.json", "assets/icon.png"],
     "win": {
-      "target": [
-        {
-          "target": "nsis",
-          "arch": ["x64"]
-        }
-      ],
+      "target": [{"target": "nsis", "arch": ["x64"]}],
       "icon": "assets/icon.ico"
     },
     "nsis": {
